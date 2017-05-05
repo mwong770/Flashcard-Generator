@@ -2,7 +2,6 @@
 //required npm packages
 var fs = require("fs");
 var inquirer = require("inquirer");
-var fs = require("fs");
 //Node package that displays terminal colors
 var chalk = require("chalk");
 
