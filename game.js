@@ -1,3 +1,7 @@
+//FUTURE IMPROVEMENTS:
+/////log user questions to JSON file with question categories to choose from
+/////after make log, user can delete from / add to it
+
 
 //required npm packages
 var fs = require("fs");
