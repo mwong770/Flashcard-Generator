@@ -81,7 +81,6 @@ function makeClozeCard() {
 }//ends makeClozeCard()
 
 function playBasicGame() {
-///////console.log(cardSet.length);
 	if (indexCount < cardSet.length) {
 		console.log("\n--------------------------------\n");
 		inquirer.prompt([
@@ -102,7 +101,6 @@ function playBasicGame() {
 	}// end of if (basicIndexCount < cardSet.length)
 	else {
 		//empties array so can insert a new set of cards
-////////cardSet = [];
 		nextAction();
 	}	
 };//end of playBasicGame()
@@ -127,13 +125,14 @@ function playClozeGame() {
 		});		
 	}// end of if going through card set array
 	else {
-/////////cardSet = [];
 		nextAction();
 	}		
 };//end of playClozeGame function
 
 function delegateAction(response) {
-/////cardSet = [];
+	//reset cardSet and indexCount for nextAction
+	cardSet = [];
+	indexCount = 0;
 	//NOTE TO SELF: Could have been done without constructor using just var cardSet = require("./basicQuestions.json"); askBasicFlashcards(); but constructors required here for assignment
 	if (response.action === "Play Basic Flashcards Game") {
 		//gets basic questions and answers from JSON file			
