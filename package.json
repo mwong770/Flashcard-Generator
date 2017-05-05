@@ -1,0 +1,24 @@
+{
+  "name": "flashcard-generator",
+  "version": "1.0.0",
+  "description": "card game allowing users to make and play basic or cloze flashcards",
+  "main": "game.js",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "inquirer": "^3.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwong770/Flashcard-Generator.git"
+  },
+  "author": "Maria Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwong770/Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/mwong770/Flashcard-Generator#readme"
+}

@@ -19,11 +19,23 @@ function makeBasicCard() {
 	inquirer.prompt([
 		{
 			name: "front",
-			message: "What question would you like to put on your card?"
+			message: "What question would you like to put on your card?",
+			validate: function (response){
+				if(!response)
+					return "You must enter a response!";
+				else
+					return true;
+			}
 		},
 		{
 			name: "back",
-			message: "What is the answer?"
+			message: "What is the answer?",
+			validate: function (response){
+				if(!response)
+					return "You must enter a response!";
+				else
+					return true;
+			}
 		}
 	]).then(function(response) {
 		cardSet.push(new BasicCard(response.front, response.back));				
@@ -48,11 +60,23 @@ function makeClozeCard() {
 	inquirer.prompt([
 		{
 			name: "full",
-			message: "What is your full text?"
+			message: "What is your full text?",
+			validate: function (response){
+				if(!response)
+					return "You must enter a response!";
+				else
+					return true;
+			}
 		},
 		{
 			name: "omitted",
-			message: "Which part do you want to take out?"
+			message: "Which part do you want to take out?",
+			validate: function (response){
+				if(!response)
+					return "You must enter a response!";
+				else
+					return true;
+			}
 		}
 	]).then(function(response) {
 		if ((response.full).includes(response.omitted)) {
