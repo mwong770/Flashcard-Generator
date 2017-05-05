@@ -19,20 +19,20 @@ function makeBasicCard() {
 	inquirer.prompt([
 		{
 			name: "front",
-			message: "What question would you like to put on your card?",
+			message: chalk.blue("What question would you like to put on your card?"),
 			validate: function (response){
 				if(!response)
-					return "You must enter a response!";
+					return chalk.red("You must enter a response!");
 				else
 					return true;
 			}
 		},
 		{
 			name: "back",
-			message: "What is the answer?",
+			message: chalk.blue("What is the answer?"),
 			validate: function (response){
 				if(!response)
-					return "You must enter a response!";
+					return chalk.red("You must enter a response!");
 				else
 					return true;
 			}
@@ -42,7 +42,7 @@ function makeBasicCard() {
 		inquirer.prompt([
 			{
 				name: "continue",
-				message: "Would you like to make another card?",
+				message: chalk.magenta("Would you like to make another card?"),
 				type: "confirm"
 			}
 		]).then(function(response){
@@ -60,20 +60,20 @@ function makeClozeCard() {
 	inquirer.prompt([
 		{
 			name: "full",
-			message: "What is your full text?",
+			message: chalk.blue("What is your full text?"),
 			validate: function (response){
 				if(!response)
-					return "You must enter a response!";
+					return chalk.red("You must enter a response!");
 				else
 					return true;
 			}
 		},
 		{
 			name: "omitted",
-			message: "Which part do you want to take out?",
+			message: chalk.blue("Which part do you want to take out?"),
 			validate: function (response){
 				if(!response)
-					return "You must enter a response!";
+					return chalk.red("You must enter a response!");
 				else
 					return true;
 			}
@@ -83,14 +83,14 @@ function makeClozeCard() {
 			cardSet.push(new ClozeCard(response.full, response.omitted));
 		} 
 		else {
-			console.log("Error: That value does not exist in the sentence.");
+			console.log(chalk.red("Error: That value does not exist in the sentence."));
       		makeClozeCard();
       		return false;
 		}
 		inquirer.prompt([
 			{
 				name: "continue",
-				message: "Would you like to make another card?",
+				message: chalk.magenta("Would you like to make another card?"),
 				type: "confirm"
 			}
 		]).then(function(response){
@@ -106,53 +106,52 @@ function makeClozeCard() {
 
 function playBasicGame() {
 	if (indexCount < cardSet.length) {
-		console.log("\n--------------------------------\n");
+		console.log("\n" + chalk.yellow.bold("--------------------------------") + "\n");
 		inquirer.prompt([
 			{
 				name: "front",
-				message: cardSet[indexCount].front	
+				message: chalk.blue(cardSet[indexCount].front)	
 			}
 		]).then(function(answer) {
 			if ((answer.front).toUpperCase() === (cardSet[indexCount].back).toUpperCase()) {
-				console.log("You got it right!");
+				console.log(chalk.green.bold("You got it right!"));
 			}
 			else {
-				console.log("That's not right. The correct answer is: " + cardSet[indexCount].back);
+				console.log(chalk.red("That's not right. The correct answer is: " + cardSet[indexCount].back));
 			}
 			indexCount++;
 			playBasicGame(cardSet);
 		});		
-	}// end of if (basicIndexCount < cardSet.length)
+	}// ends if (basicIndexCount < cardSet.length)
 	else {
-		//empties array so can insert a new set of cards
 		nextAction();
 	}	
-};//end of playBasicGame()
+};//ends playBasicGame()
 
 function playClozeGame() {
 	if (indexCount < cardSet.length) {
-		console.log("\n--------------------------------");
+		console.log("\n" + chalk.yellow.bold("--------------------------------"));
 		inquirer.prompt([
 			{
 			name: "partial",
-			message: "Complete the sentence:" + cardSet[indexCount].partial	
+			message: chalk.blue("Complete the sentence:\n" + cardSet[indexCount].partial)	
 			}
 		]).then(function(answer) {
 			//checks if user selected correct answer regardless of case 
 			if ((answer.partial).toUpperCase() === (cardSet[indexCount].omitted).toUpperCase()) {
-				console.log("You got it right!");
+				console.log(chalk.green.bold("You got it right!"));
 			}
 			else {
-				console.log("That's not right. The correct answer is: " + cardSet[indexCount].full);
+				console.log(chalk.red("That's not right. The correct answer is: " + cardSet[indexCount].full));
 			}
 			indexCount++;
 			playClozeGame(cardSet);
 		});		
-	}// end of if going through card set array
+	}// ends if (indexCount < cardSet.length)
 	else {
 		nextAction();
 	}		
-};//end of playClozeGame function
+};//ends playClozeGame function
 
 function delegateAction(response) {
 	//resets cardSet and indexCount for nextAction
@@ -180,7 +179,7 @@ function delegateAction(response) {
 		inquirer.prompt([
 			{
 				name: "cardType",
-				message: "Which type of cards do you want to make?",
+				message: chalk.magenta("Which type of cards do you want to make?"),
 				type: "list",
 				choices: ["Basic", "Cloze"]
 			}
@@ -196,7 +195,7 @@ function delegateAction(response) {
 	}
 	//if user chooses "Quit" as a next action 
 	else {
-		console.log("Thanks for playing. Goodbye.")
+		console.log(chalk.magenta.bold("Thanks for playing. Goodbye."));
 	}
 }//ends delegateAction()
 
@@ -204,7 +203,7 @@ function nextAction() {
 	inquirer.prompt([
 		{
 			name: "action",
-			message: "\nGame Over! What would you like to do next?",
+			message: "\n" + chalk.magenta("Game Over! What would you like to do next?"),
 			type: "list",
 			choices: ["Play Basic Flashcards Game", "Play Cloze Flashcards Game", "Make My Own Flashcard Game", "Quit"]
 		}
@@ -217,7 +216,7 @@ function nextAction() {
 inquirer.prompt([
 	{
 		name: "action",
-		message: "What would you like to do?",
+		message: chalk.magenta("What would you like to do?"),
 		type: "list",
 		choices: ["Play Basic Flashcards Game", "Play Cloze Flashcards Game", "Make My Own Flashcard Game"]
 	}
