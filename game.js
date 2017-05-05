@@ -89,7 +89,7 @@ function playBasicGame() {
 				message: cardSet[indexCount].front	
 			}
 		]).then(function(answer) {
-			if (answer.front === cardSet[indexCount].back) {
+			if ((answer.front).toUpperCase() === (cardSet[indexCount].back).toUpperCase()) {
 				console.log("You got it right!");
 			}
 			else {
@@ -114,7 +114,8 @@ function playClozeGame() {
 			message: "Complete the sentence:" + cardSet[indexCount].partial	
 			}
 		]).then(function(answer) {
-			if (answer.partial === cardSet[indexCount].omitted) {
+			//checks if user selected correct answer regardless of case 
+			if ((answer.partial).toUpperCase() === (cardSet[indexCount].omitted).toUpperCase()) {
 				console.log("You got it right!");
 			}
 			else {
@@ -130,7 +131,7 @@ function playClozeGame() {
 };//end of playClozeGame function
 
 function delegateAction(response) {
-	//reset cardSet and indexCount for nextAction
+	//resets cardSet and indexCount for nextAction
 	cardSet = [];
 	indexCount = 0;
 	//NOTE TO SELF: Could have been done without constructor using just var cardSet = require("./basicQuestions.json"); askBasicFlashcards(); but constructors required here for assignment
@@ -157,13 +158,13 @@ function delegateAction(response) {
 				name: "cardType",
 				message: "Which type of cards do you want to make?",
 				type: "list",
-				choices: ["BASIC", "CLOZE"]
+				choices: ["Basic", "Cloze"]
 			}
 		]).then(function(response) {
-			if (response.cardType === "BASIC") {
+			if (response.cardType === "Basic") {
 				makeBasicCard();
 			}
-			//if user chooses CLOZE
+			//if user chooses Cloze
 			else {
 				makeClozeCard();
 			}
