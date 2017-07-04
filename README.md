@@ -56,7 +56,7 @@ the user is asked a basic flashcard question.
 **If the user answers the question correctly, using lower or upper case...**
 a congratulatory response is displayed with the next question.
 
-![screenshot of app](/screenshots/basic_congratulations.png | width=550)
+![screenshot of app](/screenshots/basic_congratulations.png)
 
 
 **If the user answers the question incorrectly...**
