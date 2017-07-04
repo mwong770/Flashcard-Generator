@@ -80,7 +80,7 @@ the user is asked a cloze flashcard question (a sentence that has had some of it
 **If the user completes the sentence correctly, using lower or upper case...**
 a congratulatory response is displayed with the next question.
 
-![screenshot of app](/screenshots/cloze_congrats.png)
+![screenshot of app](/screenshots/test.png)
 
 
 **If the user answers the question incorrectly...**
