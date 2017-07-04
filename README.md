@@ -56,13 +56,13 @@ the user is asked a basic flashcard question.
 **If the user answers the question correctly, using lower or upper case...**
 a congratulatory response is displayed with the next question.
 
-![screenshot of app](/screenshots/basic_congratulations.png)**
+![screenshot of app](/screenshots/basic_congratulations.png)
 
 
 **If the user answers the question incorrectly...**
 the user is given the correct answer with the next question.
 
-![screenshot of app](/screenshots/basic_next_question.png)**
+![screenshot of app](/screenshots/basic_next_question.png)
 
 
 **When all of the basic questions have been answered...**
@@ -80,13 +80,13 @@ the user is asked a cloze flashcard question (a sentence that has had some of it
 **If the user completes the sentence correctly, using lower or upper case...**
 a congratulatory response is displayed with the next question.
 
-![screenshot of app](/screenshots/cloze_congratulations.png)**
+![screenshot of app](/screenshots/cloze_congratulations.png)
 
 
 **If the user answers the question incorrectly...**
 the user is given the correct answer with the next question.
 
-![screenshot of app](/screenshots/cloze_next_question.png)**
+![screenshot of app](/screenshots/cloze_next_question.png)
 
 
 **When all of the basic questions have been answered...**
