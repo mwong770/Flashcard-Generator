@@ -1,5 +1,5 @@
-//Node module that exports a constructor for creating basic flashcards
-//for info on scope-safe constructors: http://rainyjune.net/node/348, http://mikepackdev.com/blog_posts/9-new-scope-safe-constructors-in-oo-javascript
+// exports a constructor for creating basic flashcards
+// for info on scope-safe constructors: http://rainyjune.net/node/348, http://mikepackdev.com/blog_posts/9-new-scope-safe-constructors-in-oo-javascript
 
 var fs = require("fs");
 

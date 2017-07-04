@@ -1,7 +1,7 @@
-//Node module that exports a constructor for creating cloze flashcards
+// exports a constructor for creating cloze flashcards
 
-//global (g) replaces all instances of omitted text with .....
-//ignore case (i) replaces matching text regardless if upper or lower case
+// global (g) replaces all instances of omitted text with .....
+// ignore case (i) replaces matching text regardless if upper or lower case
 function ClozeCard(full, omitted) {
 	if (this instanceof ClozeCard) {
 		this.full = full;
