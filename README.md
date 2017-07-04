@@ -54,7 +54,7 @@ the user is asked a basic flashcard question.
 
 
 **If the user answers the question correctly, using lower or upper case...**
-a congratulatory response is displayed with next question.
+a congratulatory response is displayed with the next question.
 
 ![screenshot of app](/screenshots/basic_congratulations.png)**
 
@@ -78,7 +78,7 @@ the user is asked a cloze flashcard question (a sentence that has had some of it
 
 
 **If the user completes the sentence correctly, using lower or upper case...**
-a congratulatory response is displayed with next question.
+a congratulatory response is displayed with the next question.
 
 ![screenshot of app](/screenshots/cloze_congratulations.png)**
 
@@ -95,7 +95,7 @@ the user is given options to play the basic or cloze flashcard game, to make fla
 ![screenshot of app](/screenshots/cloze_options.png)
 
 
-**If the user chooses to make their own flashcards...**
+**If the user chooses to make his or her own flashcards...**
 the user is asked to choose between basic or cloze flashcards.
 
 ![screenshot of app](/screenshots/card_choices.png)
@@ -144,7 +144,7 @@ the user is prompted to enter an entire sentence and the part of the sentence he
 
 
 **If the user answers no...**
-a flashcard game begins using the user created basic flashcards.
+a flashcard game begins using the user created cloze flashcards.
 
 ![screenshot of app](/screenshots/no_cloze.png)
 
