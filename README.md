@@ -42,7 +42,7 @@ A Node.js command line application that lets users create and use basic and cloz
 
 
 **When Flashcard Generator is first run...**
-the user is given options to play the basic or cloze flashcard game, to make flashcards, or to quit.
+the user is given options to play the basic or cloze flashcard game, or to make flashcards.
 
 ![screenshot of app](/screenshots/start.png)
 
