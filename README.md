@@ -156,7 +156,7 @@ the user is given options to play the basic or cloze flashcard game, to make fla
 
 
 **If the user chooses to quit...**
-the user is thanked for playing and told goodbye.
+the user is thanked for playing.
 
 ![screenshot of app](/screenshots/quit.png)
 
@@ -170,4 +170,4 @@ the user is thanked for playing and told goodbye.
 
 If you have any questions or comments, feel free to message me on [LinkedIn](https://www.linkedin.com/in/maria-wong/).
 
-Thanks for checking out Flashcard Generator!
+### Thanks for checking out Flashcard Generator!
